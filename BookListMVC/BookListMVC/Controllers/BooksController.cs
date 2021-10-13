@@ -55,7 +55,7 @@ namespace BookListMVC.Controllers
                     _db.Books.Update(Book);
                 }
                 _db.SaveChanges();
-                return RedirectToAction("Index");
+               return RedirectToAction("Index");
             }
             return View(Book);
         }
