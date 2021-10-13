@@ -42,7 +42,7 @@ namespace BookListMVC.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public IActionResult Upsert() // We use ? because this id can be null if we have no id, which means we'll be creating
+        public IActionResult Upsert() 
         {
             if (ModelState.IsValid)
             {

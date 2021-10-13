@@ -12,7 +12,7 @@ function loadDataTable() {
             "datatype": "json"
         },
         "columns": [
-            { "data": "bookName", "width": "20%" },
+            { "data": "name", "width": "20%" },
             { "data": "author", "width": "20%" },
             { "data": "isbn", "width": "20%" },
             {
