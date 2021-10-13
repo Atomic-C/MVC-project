@@ -38,7 +38,27 @@ namespace BookListMVC.Controllers
                 }
                 return View(Book);
             }
-        } 
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public IActionResult Upsert() // We use ? because this id can be null if we have no id, which means we'll be creating
+        {
+            if (ModelState.IsValid)
+            {
+                if (Book.Id == 0)
+                { // Create
+                    _db.Books.Add(Book);
+                }
+                else
+                { // Update
+                    _db.Books.Update(Book);
+                }
+                _db.SaveChanges();
+                RedirectToAction("Index");
+            }
+            return View(Book);
+        }
 
 
         #region API Calls
